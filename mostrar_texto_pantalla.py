@@ -6,7 +6,7 @@ def main():
     file_name = sys.argv[1]
 
     # Invocar la función extract_text_from_pdf con el nombre del archivo
-    text = extract_text.extract_text_from_pdf(file_name)
+    text = extract_pdf_text.extract_text_from_pdf(file_name)
 
     # Imprimir el texto por pantalla
     print(text)
