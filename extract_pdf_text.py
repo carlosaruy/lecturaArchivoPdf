@@ -11,7 +11,8 @@ def extract_text_from_pdf(file_path):
         text = ''
 
         # Recorrer todas las páginas del archivo PDF
-        for page in range(pdf_reader.numPages):
+        # utiliza len(pdf_reader.pages), ya que  reader.numPages está deprecado.
+        for page in range(len(pdf_reader.pages)):
             # Extraer el texto de la página actual
             # Utiliza reader.pages[page_number] en lugar de reader.getPage(pageNumber)
             page_text = pdf_reader.pages[page].extract_text()
