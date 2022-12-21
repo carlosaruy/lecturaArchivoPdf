@@ -4,7 +4,8 @@ def extract_text_from_pdf(file_path):
     # Abrir el archivo PDF
     with open(file_path, 'rb') as f:
         # Crear un objeto PDFReader para leer el archivo
-        pdf_reader = PyPDF2.PdfFileReader(f)
+        # Utiliza PdfReader en lugar de PdfFileReader
+        pdf_reader = PyPDF2.PdfReader(f)
 
         # Inicializar una variable para almacenar el texto extraído
         text = ''
@@ -12,7 +13,8 @@ def extract_text_from_pdf(file_path):
         # Recorrer todas las páginas del archivo PDF
         for page in range(pdf_reader.numPages):
             # Extraer el texto de la página actual
-            page_text = pdf_reader.getPage(page).extractText()
+            # Utiliza reader.pages[page_number] en lugar de reader.getPage(pageNumber)
+            page_text = pdf_reader.pages[page].extract_text()
             # Añadir el texto a la variable
             text += page_text
 

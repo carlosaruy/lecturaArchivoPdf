@@ -4,7 +4,7 @@ from extract_pdf_text import extract_text_from_pdf
 class TestExtractTextFromPdf(unittest.TestCase):
     def test_extract_text_from_pdf(self):
         # Arrange
-        file_path = 'path/to/file.pdf'
+        file_path = './test.pdf'
         
         # Act
         text = extract_text_from_pdf(file_path)
